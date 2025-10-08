@@ -13,6 +13,9 @@ jobs:
       id-token: write # Used for keyless authentication with Endor Labs
       pull-requests: write # Required to automatically comment on PRs for new policy violations
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
