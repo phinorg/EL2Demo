@@ -1,11 +1,9 @@
- - name: Endor Labs Scan PR to Default Branch
-        if: github.event_name == 'pull_request'
-        uses: endorlabs/github-action@v1 # Replace v1 with the commit SHA of the latest version of the GitHub Action for enhanced security
-        with:
-          namespace: 'pmm-robert-haynes' # Update with your Endor Labs namespace
-          scan_summary_output_type: 'table'
-          scan_dependencies: true
-          scan_secrets: true
-          pr: true
-          enable_pr_comments: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+ - name: 'Endor Labs Scan Push'
+    if: ${{ github.event_name == 'push' }}
+    uses: endorlabs/github-action@v1 # Replace v1 with the commit SHA of the latest version of the GitHub Action for enhanced security
+    with:
+    namespace: 'pmm-robert-haynes' # Replace with your Endor Labs tenant namespace
+    scan_dependencies: true
+    pr: true
+    scan_summary_output_type: 'table'
+    sarif_file: 'findings.sarif'
