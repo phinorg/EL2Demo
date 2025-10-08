@@ -165,6 +165,8 @@ public class UserController {
 			ResultSet result = sqlStatement.executeQuery(sqlQuery);
 			/* END EXAMPLE VULNERABILITY */
 
+			/* TODO: REPLACE WITH PREPARED STATEMENT */
+
 			// Did we find exactly 1 user that matched?
 			if (result.first()) {
 				logger.info("User Found.");
