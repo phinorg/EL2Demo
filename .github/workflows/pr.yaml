@@ -1,4 +1,4 @@
- - name: 'Endor Labs Scan Push'
+- name: 'Endor Labs Scan Push'    
     if: ${{ github.event_name == 'push' }}
     uses: endorlabs/github-action@v1 # Replace v1 with the commit SHA of the latest version of the GitHub Action for enhanced security
     with:
